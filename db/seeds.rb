@@ -42,5 +42,30 @@ services.each do |service|
     })
     newService.save
     end
+
+Customer.delete_all()
+customers = ['kevin', 'lebron', 'kyrie', 'tristan', 'klay']
+customers.sort!
+customers.each do |customer|
+    newCustomer = Customer.new({
+    'name' => customer,
+    'email_address' => customer + "@gmail.com"
+    })
+    newCustomer.save
+    end
+
+Location.delete_all()
+locations = ['Leith Walk Tesco', 'Carolines Flat', 'Edinbugh Castle', 'CodeClan', 'Westminster Abbey']
+locations.sort!
+locations.each do |location|
+    newLocation = Location.new({
+    'name' => location,
+    'location_type_id' => LocationType.all.sample.id
+    })
+    newLocation.save
+    end
+
+
+
 binding.pry
 nil
