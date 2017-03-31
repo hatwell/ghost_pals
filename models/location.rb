@@ -20,9 +20,14 @@ class Location
   end
 
   def delete()
-    sql = "DELETE * FROM locations WHERE id = #{id}"
+    sql = "DELETE * FROM locations WHERE id = #{@id}"
   end
 
+  def location_type
+    sql = "SELECT name FROM location_types WHERE id = #{@location_type_id} "
+    result = LocationType.map_items(sql)
+    return result[0].name
+  end
 
   def self.all()
     sql = "SELECT * FROM locations"
