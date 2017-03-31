@@ -22,7 +22,7 @@ CREATE TABLE ghost_types (
 CREATE TABLE services (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255)
-)
+);
 
 CREATE TABLE customers (
   id SERIAL8 PRIMARY KEY,
@@ -56,7 +56,7 @@ CREATE TABLE hauntings (
 CREATE TABLE neghostiations (
   id SERIAL8 PRIMARY KEY,
   neghostiation_date DATE,
-  haunting_id INT4 REFERENCES haunting(id) ON DELETE CASCADE,
+  haunting_id INT4 REFERENCES hauntings(id) ON DELETE CASCADE,
   services_id INT4 REFERENCES services(id) ON DELETE CASCADE,
   report TEXT,
   successful BOOL
