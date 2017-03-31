@@ -31,5 +31,16 @@ ghost_types.each do |ghost_type|
     })
     newGhostType.save
     end
+
+
+Service.delete_all()
+services = ['exorcism', 'sage-burning', 'ouija board', 'energy cleansing', 'capture and release']
+services.sort!
+services.each do |service|
+    newService = Service.new({
+    'name' => service
+    })
+    newService.save
+    end
 binding.pry
 nil
