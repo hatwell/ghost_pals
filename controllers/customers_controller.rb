@@ -16,5 +16,10 @@ end
 post '/customers/new' do
   customer = Customer.new()
   customer.save()
-  erb( :"hautings/new_haunting")
+  erb( :"hauntings/new_haunting")
+end
+
+get '/customers/:id' do
+  @customer = Customer.find_by_id(params[:id])
+  erb( :"customers/dashboard")
 end

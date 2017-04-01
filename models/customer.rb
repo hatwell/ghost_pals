@@ -1,5 +1,6 @@
 
 require_relative('../db/sql_runner')
+require_relative('./haunting')
 
 class Customer
 
@@ -27,10 +28,10 @@ class Customer
     sql = "DELETE * FROM customers WHERE id = #{id}"
   end
 
-  def email_lookup()
-    sql = "SELECT customers.id FROM customers WHERE email_address = '#{@email_address}'"
+  def self.find_by_id(id)
+    sql = "SELECT * FROM customers WHERE id = '#{id}'  "
     results = Customer.map_items(sql)
-    return results.first.id
+    return results.first()
   end
 
   def hauntings()
