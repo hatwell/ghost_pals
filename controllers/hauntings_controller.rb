@@ -12,3 +12,9 @@ end
 get '/hauntings/new' do
   erb(:haunting_report)
 end
+
+post('/hauntings') do
+  haunting = Haunting.new(params)
+  haunting.save
+  redirect to("/hauntings")
+end
