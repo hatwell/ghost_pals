@@ -1,9 +1,18 @@
 <h2>Please select your email address from the dropdown:</h2>
 <p>
+  <form class="get_hauntings" action="/customers/:id" method="get">
+
+  </form>
   <select id="customer-select" name="customer_email">
     <% for customer in @customers %>
     <option value="<%=customer.id%>"><%=customer.email_address%></option>
     <% end %>
 
   </select>
+
+  <div class="fake_submit_button">
+    <p>
+    <a href="/customers/">Select</a>
+    </p>
+  </div>
 </p>

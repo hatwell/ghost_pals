@@ -27,6 +27,12 @@ class Customer
     sql = "DELETE * FROM customers WHERE id = #{id}"
   end
 
+  def email_lookup()
+    sql = "SELECT customers.id FROM customers WHERE email_address = '#{@email_address}'"
+    results = Customer.map_items(sql)
+    return results.first.id
+  end
+
   def hauntings()
     sql = "SELECT * FROM hauntings WHERE customer_id = #{@id}"
     Haunting.map_items(sql)

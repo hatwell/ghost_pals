@@ -7,6 +7,10 @@ body {
   background-color: linen;
 }
 
+p {
+  font-family: helvetica;
+}
+
 .flex-container {
   flex-direction: column;
   justify-content:center;
@@ -21,8 +25,8 @@ body {
   border: dashed 1px grey;
 }
 
-p {
-  font-family: helvetica;
+.fake_submit_button {
+  background-color: pink;
 }
 
 #new_customer {
