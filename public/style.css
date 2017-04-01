@@ -1,11 +1,43 @@
 * {
   border: 1px solid red;
+  font-family: helvetica;
 }
 
-#home_buttons {
+body {
+  background-color: linen;
+}
 
+.flex-container {
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
 }
 
 .home_screen_button {
+  display:block;
+  justify-content:space-around;
+  align-items:center;
+  text-align: center;
+  border: dashed 1px grey;
+}
 
+p {
+  font-family: helvetica;
+}
+
+#new_customer {
+  background-color: lightskyblue;
+}
+
+#existing_customer {
+  background-color: aquamarine;
+}
+
+#investigator {
+  background-color: lightpink;
+}
+
+#home_page_body_wrapper {
+  display: block;
+  align-items:center;
 }
