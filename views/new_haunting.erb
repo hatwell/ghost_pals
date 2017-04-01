@@ -1,0 +1,26 @@
+<form method="post" action="/hauntings">
+<center>
+<label for="first-name">First Name:</label>
+<input id="first-name" type="text" name="first_name"/>
+<br/>
+<label for="last-name">Last Name:</label>
+<input id="last-name" type="text" name="last_name" />
+
+<hr/>
+<label for="house-select">Select a house:</label>
+<select id="house-select" name="house_id">
+  <% @houses.each do|house|%>
+  <option value="<%=house.id%>">
+    <%=house.house_name%>
+  </option>
+  <%end%>
+ </select>
+ <br/>
+
+ <label for="age">Age:</label>
+ <input id="age" type="number" name="age"/>
+ <hl/>
+ <input type="submit" value="Add Student"/>
+
+ </center>
+</form>
