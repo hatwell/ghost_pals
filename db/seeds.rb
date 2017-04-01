@@ -84,7 +84,8 @@ haunting1 = Haunting.new ({
   'haunting_date' => '04/04/2015',
   'haunting_description' => 'it was very spooky',
   'ghost_name' => 'spooky david',
-  'ghost_type_id' => GhostType.all.sample.id
+  'ghost_type_id' => GhostType.all.sample.id,
+  'customer_id' => Customer.all.sample.id
 })
 haunting1.save()
 

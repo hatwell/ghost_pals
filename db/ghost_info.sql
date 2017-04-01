@@ -53,7 +53,8 @@ CREATE TABLE hauntings (
   haunting_date DATE,
   haunting_description TEXT,
   ghost_name VARCHAR(255),
-  ghost_type_id INT4 REFERENCES ghost_types(id) ON DELETE CASCADE
+  ghost_type_id INT4 REFERENCES ghost_types(id) ON DELETE CASCADE,
+  customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE
 
 );
 

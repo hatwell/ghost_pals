@@ -1,7 +1,9 @@
-<% for customer in @customers %>
+<h2>Please select your email address from the dropdown:</h2>
+<p>
+  <select id="customer-select" name="customer_email">
+    <% for customer in @customers %>
+    <option value="<%=customer.id%>"><%=customer.email_address%></option>
+    <% end %>
 
-<%= puts customer %>
-
-<% end %>
-
-customers page 
+  </select>
+</p>

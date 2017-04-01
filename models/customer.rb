@@ -27,6 +27,14 @@ class Customer
     sql = "DELETE * FROM customers WHERE id = #{id}"
   end
 
+  def hauntings()
+    sql = "SELECT * FROM hauntings WHERE customer_id = #{@id}"
+    Haunting.map_items(sql)
+  end
+
+  def neghostiations()
+
+  end
 
   def self.all()
     sql = "SELECT * FROM customers"

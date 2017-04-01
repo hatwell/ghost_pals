@@ -6,17 +6,19 @@ class Haunting
     @haunting_date = params['haunting_date']
     @haunting_description = params['haunting_description']
     @ghost_name = params['ghost_name']
-    @ghost_type_id = params['ghost_type_id']
+    @ghost_type_id = params['ghost_type_id'].to_i
+    @customer_id = params['customer_id'].to_i
+    @id = params['id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO hauntings(haunting_date, haunting_description, ghost_name, ghost_type_id) VALUES ('#{@haunting_date}', '#{@haunting_description}', '#{@ghost_name}', #{@ghost_type_id} ) RETURNING *"
+    sql = "INSERT INTO hauntings(haunting_date, haunting_description, ghost_name, ghost_type_id, customer_id) VALUES ('#{@haunting_date}', '#{@haunting_description}', '#{@ghost_name}', #{@ghost_type_id}, #{@customer_id} ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE hauntings SET (haunting_date, haunting_description, ghost_name, ghost_type_id) = ('#{@haunting_date}', '#{@haunting_description}', '#{@ghost_name}', #{@ghost_type_id})"
+    sql = "UPDATE hauntings SET (haunting_date, haunting_description, ghost_name, ghost_type_id, customer_id) = ('#{@haunting_date}', '#{@haunting_description}', '#{@ghost_name}', #{@ghost_type_id}, #{@customer_id})"
     SqlRunner.run(sql)
   end
 
