@@ -5,8 +5,8 @@ class Haunting
   def initialize (params)
     @haunting_date = params['haunting_date']
     @haunting_description = params['haunting_description']
-    @ghost_name = params['haunting_name']
-    @ghost_type_id = params['haunting_type_id']
+    @ghost_name = params['ghost_name']
+    @ghost_type_id = params['ghost_type_id']
   end
 
   def save()

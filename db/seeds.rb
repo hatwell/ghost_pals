@@ -78,7 +78,33 @@ ghosts.each do |ghost|
     end
 
 
+Haunting.delete_all()
 
+haunting1 = Haunting.new ({
+  'haunting_date' => '04/04/2015',
+  'haunting_description' => 'it was very spooky',
+  'ghost_name' => 'spooky david',
+  'ghost_type_id' => GhostType.all.sample.id
+})
+haunting1.save()
+
+investigator1 = Investigator.new({
+  'name' => 'Caroline Hatwell',
+  'email_address' => 'caroline.hatwell@gmail.com'
+  })
+
+investigator1.save()
+
+neghostiation1 = Neghostiation.new({
+  'neghostiation_date' => '10/04/2016',
+  'investigator_id' => investigator1.id,
+  'haunting_id' => haunting1.id,
+  'services_id' => Service.all.sample.id,
+  'report' => 'the ghost is still there',
+  'successful' => false
+  })
+
+  neghostiation1.save()
 
 
 binding.pry

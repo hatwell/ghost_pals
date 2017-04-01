@@ -32,7 +32,8 @@ CREATE TABLE customers (
 
 CREATE TABLE investigators (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  email_address VARCHAR(255)
 );
 
 CREATE TABLE locations (
@@ -51,14 +52,15 @@ CREATE TABLE hauntings (
   id SERIAL8 PRIMARY KEY,
   haunting_date DATE,
   haunting_description TEXT,
-  ghost_name VARCHAR(255)
-  ghost_id INT4 REFERENCES ghosts(id) ON DELETE CASCADE
+  ghost_name VARCHAR(255),
+  ghost_type_id INT4 REFERENCES ghost_types(id) ON DELETE CASCADE
 
 );
 
 CREATE TABLE neghostiations (
   id SERIAL8 PRIMARY KEY,
   neghostiation_date DATE,
+  investigator_id INT4 REFERENCES investigators(id) ON DELETE CASCADE,
   haunting_id INT4 REFERENCES hauntings(id) ON DELETE CASCADE,
   services_id INT4 REFERENCES services(id) ON DELETE CASCADE,
   report TEXT,
