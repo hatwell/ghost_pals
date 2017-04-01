@@ -50,8 +50,10 @@ CREATE TABLE ghosts (
 CREATE TABLE hauntings (
   id SERIAL8 PRIMARY KEY,
   haunting_date DATE,
-  ghost_id INT4 REFERENCES ghosts(id) ON DELETE CASCADE,
-  haunting_description TEXT
+  haunting_description TEXT,
+  ghost_name VARCHAR(255)
+  ghost_id INT4 REFERENCES ghosts(id) ON DELETE CASCADE
+
 );
 
 CREATE TABLE neghostiations (

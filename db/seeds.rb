@@ -66,6 +66,20 @@ locations.each do |location|
     end
 
 
+Ghost.delete_all()
+ghosts = ['Spooky Jim', 'The Leith Poltergheist', 'Old Mary', 'Black Spectre', 'the ghost of a dog']
+ghosts.sort!
+ghosts.each do |ghost|
+    newGhost = Ghost.new({
+    'name' => ghost,
+    'ghost_type_id' => GhostType.all.sample.id
+    })
+    newGhost.save
+    end
+
+
+
+
 
 binding.pry
 nil
