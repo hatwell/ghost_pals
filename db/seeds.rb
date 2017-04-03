@@ -81,14 +81,16 @@ ghosts.each do |ghost|
 Haunting.delete_all()
 
 haunting1 = Haunting.new ({
-  'haunting_date' => '04/04/2015',
+  'haunting_name' => '4th July, my flat',
   'haunting_description' => 'it was very spooky',
-  'ghost_name' => 'spooky david',
+  'ghost_description' => 'spooky david',
   'ghost_type_id' => GhostType.all.sample.id,
+  'location_type_id' => LocationType.all.sample.id,
   'customer_id' => Customer.all.sample.id
 })
 haunting1.save()
 
+Investigator.delete_all
 investigator1 = Investigator.new({
   'name' => 'Caroline Hatwell',
   'email_address' => 'caroline.hatwell@gmail.com'

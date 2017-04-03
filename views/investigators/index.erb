@@ -1,0 +1,16 @@
+<a href="/neghostiations/new">File a new report</a>
+
+<table>
+  <th>Previous Neghostations</th>
+  <% for neghostiation in @neghostiations %>
+  <tr>
+    <td><%=neghostiation.neghostiation_date %></td>
+    <td><%=neghostiation.report %></td>
+    <td><%=neghostiation.successful %></td>
+    <td><%=neghostiation.id %></td>
+    <td>
+      <a href='/neghostiations/<%= neghostiation.id %>'>More Info</a>
+    </td>
+  </tr>
+  <% end %>
+</table>

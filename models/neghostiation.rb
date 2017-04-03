@@ -4,11 +4,12 @@ class Neghostiation
 
   def initialize(params)
     @neghostiation_date = params['neghostiation_date']
-    @investigator_id = params['investigator_id']
-    @haunting_id = params['haunting_id']
-    @services_id = params['services_id']
+    @investigator_id = params['investigator_id'].to_i
+    @haunting_id = params['haunting_id'].to_i
+    @services_id = params['services_id'].to_i
     @report = params['report']
     @successful = params['successful']
+    @id = params['id'].to_i
   end
 
   def save()
@@ -27,14 +28,24 @@ class Neghostiation
     sql = "DELETE * FROM neghostiations WHERE id = #{@id}"
   end
 
+  def location()
+    sql = "SELECT locations.name FROM location INNER JOIN hauntings WHERE id = #{@haunting_id}"
+    result = SqlRunner.run(sql)
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM neghostiations WHERE id = #{id}"
+    Neghostiation.map_items(sql).first
+  end
+
   def self.all()
     sql = "SELECT * FROM neghostiations"
-    Haunting.map_items(sql)
+    Neghostiation.map_items(sql)
   end
 
   def self.map_items(sql)
     neghostiations = SqlRunner.run(sql)
-    result = neghostiation.map {|neghostiation| Neghostiation.new(neghostiation)}
+    result = neghostiations.map {|neghostiation| Neghostiation.new(neghostiation)}
     return result
   end
 

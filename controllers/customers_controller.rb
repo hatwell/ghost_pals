@@ -13,9 +13,12 @@ get '/customers/new' do
 end
 
 
-post '/customers/new' do
-  customer = Customer.new()
+post '/customers' do
+  customer = Customer.new(params)
   customer.save()
+  @ghost_types = GhostType.all()
+  @location_types = LocationType.all()
+  @customers = Customer.all()
   erb( :"hauntings/new_haunting")
 end
 
