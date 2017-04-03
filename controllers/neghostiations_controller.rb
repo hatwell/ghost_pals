@@ -3,6 +3,8 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/haunting.rb' )
 require_relative( '../models/neghostiation.rb' )
 require_relative('../models/investigator.rb')
+require_relative('../models/service.rb')
+
 
 get '/neghostiations/all' do
   @neghostiations = Neghostiation.all()
@@ -11,12 +13,15 @@ end
 
 get '/neghostiations/new' do
   @hauntings = Haunting.all
+  @services = Service.all
   erb( :"investigators/neghostiation_report" )
 end
 
 post '/neghostiations' do
   @haunting = Haunting.find(params['haunting_id'])
+  @hauntings = Haunting.all
   @investigators = Investigator.all()
+  @services = Service.all
   erb ( :"investigators/new_report" )
 end
 

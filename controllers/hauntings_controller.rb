@@ -8,6 +8,7 @@ require_relative( '../models/haunting.rb' )
 require_relative( '../models/location.rb' )
 require_relative( '../models/location_type.rb' )
 require_relative( '../models/customer.rb' )
+require_relative( '../models/service')
 
 get '/hauntings' do
   @hauntings = Haunting.all

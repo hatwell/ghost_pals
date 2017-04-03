@@ -8,8 +8,41 @@
       </option>
     <% end %>
   </select>
-  <label for ="neghostation-date"></label>
-  <input id="neghostation-date" type="date" name="neghostiation_date">
-  
+
+  <br><br>
+  <label for="hauntingid">Haunting being investigated</label>
+  <select id="haunting-id" name="haunting_id">
+  <% @hauntings.each do |haunting| %>
+  <option value="<%=haunting.id%>">
+    <%=haunting.haunting_name %>
+    <% end %>
+  </select>
+
+  <br><br>
+  <label for ="neghostation-date">On what date did the investigation take place?</label>
+  <input id="neghostation-date" type="date" name="neghostiation_date" max="04-05-2017">
+
+  <br><br>
+  <label for ="services">Which services were carried out?</label>
+  <br>
+
+  <% @services.each do |service| %>
+  <input id ="services" type = "checkbox" name="services_id" value="<%= service.id %>"/>
+  <%= service.name  %> <br>
+  <% end %>
+  <br>
+
+  <label for="report">Please write a report of what took place when you carried out the investigation</label>
+  <br>
+  <textarea name="report" rows="5" cols="30">
+    Your investigation report...
+</textarea>
+<br>
+
+  <label for="successful">Would you consider this a successful visit (i.e. was the ghost calmed?)</label>
+  <br>
+  <input id="successful" type="radio" name="successful" value = "true" />Yes</br>
+  <input id="successful" type="radio" name="successful" value = "false" />No <br>
+
 
 </form>

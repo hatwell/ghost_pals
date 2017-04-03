@@ -1,6 +1,6 @@
 class Haunting
   attr_reader :id
-  attr_accessor :haunting_name, :haunting_id, :haunting_description
+  attr_accessor :haunting_name, :haunting_id, :haunting_description, :haunting_date, :ghost_name, :ghost_type_id, :location_name, :location_type_id, :customer_id
 
   def initialize (params)
     @haunting_name = params['haunting_name']

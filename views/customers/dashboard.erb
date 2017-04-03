@@ -1,1 +1,19 @@
-<%=@customer.hauntings%>
+<%=@customer.hauntings.ghost_name%>
+
+
+<table>
+  <th>Your Reported Hauntings</th>
+  <% for haunting in @customer.hauntings %>
+  <tr>
+    <td><%=haunting.haunting_date %></td>
+    <td><%=haunting.location_name %></td>
+    <td><%=haunting.location_type %></td>
+    <td><%=haunting.ghost_name %></td>
+    <td><%=haunting.ghost_type %></td>
+    <td><%=haunting.haunting_description %> %></td>
+    <td>
+      <a href='/neghostiations/<%= neghostiation.id %>'>More Info</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
