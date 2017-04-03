@@ -1,21 +1,21 @@
 class Ghost
   attr_reader :id
-  attr_accessor :name, :ghost_type_id
+  attr_accessor :ghost_name, :ghost_type_id
 
   def initialize(params)
-    @name = params['name']
+    @ghost_name = params['ghost_name']
     @ghost_type_id = params['ghost_type_id'].to_i
     @id = params['id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO ghosts(name, ghost_type_id) VALUES ('#{@name}', #{@ghost_type_id} ) RETURNING *"
+    sql = "INSERT INTO ghosts(ghost_name, ghost_type_id) VALUES ('#{@ghost_name}', #{@ghost_type_id} ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE ghosts SET (name, ghost_type_id) = ('#{@name}', #{@ghost_type_id} )"
+    sql = "UPDATE ghosts SET (ghost_name, ghost_type_id) = ('#{@ghost_name}', #{@ghost_type_id} )"
     SqlRunner.run(sql)
   end
 

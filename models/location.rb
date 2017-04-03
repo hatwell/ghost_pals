@@ -1,21 +1,21 @@
 class Location
   attr_reader :id
-  attr_accessor :name, :location_type_id
+  attr_accessor :location_name, :location_type_id
 
   def initialize(params)
-    @name = params['name']
+    @location_name = params['location_name']
     @location_type_id = params['location_type_id'].to_i
     @id = params['id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO locations(name, location_type_id) VALUES ('#{@name}', #{@location_type_id} ) RETURNING *"
+    sql = "INSERT INTO locations(location_name, location_type_id) VALUES ('#{@location_name}', #{@location_type_id} ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE locations SET (name, location_type_id) = ('#{@name}', #{@location_type_id} )"
+    sql = "UPDATE locations SET (location_name, location_type_id) = ('#{@location_name}', #{@location_type_id} )"
     SqlRunner.run(sql)
   end
 

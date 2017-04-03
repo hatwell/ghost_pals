@@ -7,3 +7,8 @@ require_relative('controllers/neghostiations_controller')
 get '/' do
   erb( :index )
 end
+
+
+not_found do
+  erb(:error)
+end

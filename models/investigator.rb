@@ -30,7 +30,7 @@ class Investigator
 
   def self.all()
     sql = "SELECT * FROM investigators"
-    Customer.map_items(sql)
+    Investigator.map_items(sql)
   end
 
   def self.map_items(sql)

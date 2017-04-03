@@ -11,6 +11,10 @@ p {
   font-family: helvetica;
 }
 
+label {
+  padding: 10px;
+}
+
 .flex-container {
   flex-direction: column;
   justify-content:center;
@@ -23,6 +27,24 @@ p {
   align-items:center;
   text-align: center;
   border: dashed 1px grey;
+}
+
+.error_page {
+  background-color: black;
+  color: white;
+  align-items:center;
+  text-align: center;
+  height:auto;
+}
+
+.error_page > a {
+  color: white;
+  text-decoration: underline;
+}
+
+#error_page_img {
+  width: 50%;
+  height: auto;
 }
 
 .fake_submit_button {

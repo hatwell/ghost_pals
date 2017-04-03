@@ -1,0 +1,15 @@
+<form method = 'post' action='/new_neghostiation' >
+  <label for="investigator-name">Select your name</label>
+
+  <select id="investigator-name" name="investigator_id">
+    <% @investigators.each do |investigator| %>
+      <option value = "<%= investigator.id %>">
+        <%= investigator.name %>
+      </option>
+    <% end %>
+  </select>
+  <label for ="neghostation-date"></label>
+  <input id="neghostation-date" type="date" name="neghostiation_date">
+  
+
+</form>

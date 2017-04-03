@@ -12,7 +12,7 @@ require_relative('../models/person')
 require_relative('../models/service')
 
 LocationType.delete_all()
-location_types = ['educational building', 'office building', 'home', 'shop', 'hospital', 'municipal building', 'outdoors', 'historical site', 'religious building']
+location_types = ['educational building', 'pub', 'office building', 'home', 'shop', 'hospital', 'municipal building', 'outdoors', 'historical site', 'religious building']
 location_types.sort!
 location_types.each do |location_type|
     newLocationType = LocationType.new({
@@ -59,7 +59,7 @@ locations = ['Leith Walk Tesco', 'Carolines Flat', 'Edinbugh Castle', 'CodeClan'
 locations.sort!
 locations.each do |location|
     newLocation = Location.new({
-    'name' => location,
+    'location_name' => location,
     'location_type_id' => LocationType.all.sample.id
     })
     newLocation.save
@@ -82,10 +82,12 @@ Haunting.delete_all()
 
 haunting1 = Haunting.new ({
   'haunting_name' => '4th July, my flat',
+  'haunting_date' => '4/2/2017',
   'haunting_description' => 'it was very spooky',
-  'ghost_description' => 'spooky david',
+  'ghost_name' => 'spooky david',
   'ghost_type_id' => GhostType.all.sample.id,
-  'location_type_id' => LocationType.all.sample.id,
+  'location_name' => Location.all[1].location_name,
+  'location_type_id' => Location.all[1].location_type_id,
   'customer_id' => Customer.all.sample.id
 })
 haunting1.save()
@@ -96,7 +98,13 @@ investigator1 = Investigator.new({
   'email_address' => 'caroline.hatwell@gmail.com'
   })
 
+investigator2 = Investigator.new({
+  'name' => 'David Silva',
+  'email_address' => 'davidsilva@mcfc.com'
+  })
+
 investigator1.save()
+investigator2.save()
 
 neghostiation1 = Neghostiation.new({
   'neghostiation_date' => '10/04/2016',

@@ -4,8 +4,19 @@
   <input id="haunting-name" type="text" name="haunting_name"/>
   <br/>
 
-  <label for="location-type-select">Please select the type of location where you had your experience </label>
+  <label for ="haunting-date">Please select the date the incident occurred:</label>
+  <input id="haunting-date" type="date" name="haunting_date">
+
+<br>
+
+  <label for ="location-name">Where did the incident take place?</label>
+  <input id ="location-name" type="text" name="location_name" />
+
+  <br>
+
+  <label for="location-type-select">What type of location was this </label>
   <select id="location-type-select" name="location_type_id">
+  <option value="" disabled selected hidden>Please Choose...</option>
     <% @location_types.each do |location_type| %>
       <option value="<%= location_type.id %>">
         <%=location_type.name  %>
@@ -13,9 +24,16 @@
     <% end %>
   </select>
 <br>
-  <label for="ghost-type-select">Please select the type of ghost you think you saw </label>
+
+<label for ="ghost-name">Please name the ghost you saw</label>
+<input id ="ghost-name" type="text" name="ghost_name" />
+
+<br>
+  <label for="ghost-type-select">Please estimate what type of ghost you saw</label>
 
   <select id="ghost-type-select" name="ghost_type_id">
+  <option value="" disabled selected hidden>Please Choose...</option>
+
     <% @ghost_types.each do |ghost_type| %>
       <option value="<%= ghost_type.id %>">
         <%=ghost_type.name  %>
@@ -24,9 +42,12 @@
 
   </select>
   <br>
-  <label for="ghost-description">Please decribe the ghost and your experience:</label>
-  <input id="ghost-description" type="text" name="ghost_description" />
+
+  <label for="haunting-description">Please describe the ghost and your experience:</label>
+  <input id="haunting-description" type="text" name="haunting_description" />
+
 <br>
+
   <label for="customer-email-select">Please select your email address </label>
   <select id="customer-email-select" name="customer_id">
     <% @customers.each do |customer| %>

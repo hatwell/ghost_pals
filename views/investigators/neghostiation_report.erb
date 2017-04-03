@@ -1,0 +1,17 @@
+<form method = 'post' action='/neghostiations' >
+
+
+  <label for="haunting-select">Please select the haunting you will be investigating </label>
+  <select id="haunting-select" name="haunting_id">
+    <% @hauntings.each do |haunting| %>
+      <option value="<%= haunting.id %>">
+        <%=haunting.haunting_name  %>
+       </option>
+    <% end %>
+  </select>
+<br>
+
+
+
+   <input type="submit" value="Submit Details"/>
+</form>
