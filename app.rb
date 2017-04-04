@@ -8,6 +8,11 @@ get '/' do
   erb( :index )
 end
 
+get '/ghosts/all' do
+  @ghosts = ghost.all
+  erb(:all_ghosts)
+end
+
 
 not_found do
   erb(:error)

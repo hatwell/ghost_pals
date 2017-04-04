@@ -31,9 +31,13 @@ post '/new_neghostiation' do
   @services = Service.all
   neghostiation = Neghostiation.new(params)
   neghostiation.save()
-  erb(:"investigators/confirmation")
-  redirect '/neghostiations/all'
 
+  redirect '/investigators/confirmation'
+
+end
+
+get '/investigators/confirmation' do
+  erb(:"investigators/confirmation")
 end
 
 get '/new_neghostiation' do
@@ -45,6 +49,11 @@ post '/hauntings/save' do
   Haunting.new(params).save
   Ghost.new(params).save
 end
+post 'neghostiations/edit' do
+  neghostiation = Neghostation.new(params)
+  neghostiation.update()
+  erb(:"investigators/index")
+end
 
 #ToDo
 # post '/neghostiations/new' do
@@ -53,6 +62,15 @@ end
 #   erb( :"neghostiations/new_haunting")
 # end
 #
+
+get '/neghostiations/:id/edit' do
+  @hauntings = Haunting.all
+  @investigators = Investigator.all()
+  @services = Service.all
+  @neghostiation = Neghostiation.find_by_id(params[:id])
+  erb( :"investigators/edit_report")
+end
+
 get '/neghostiations/:id' do
   @neghostiation = Neghostiation.find_by_id(params[:id])
   erb( :"investigators/neghostiation_details")
