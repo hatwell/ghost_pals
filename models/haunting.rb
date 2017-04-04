@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('../models/ghost_type')
+require_relative('../models/customer')
 class Haunting
   attr_reader :id
   attr_accessor :haunting_name, :haunting_id, :haunting_description, :haunting_date, :ghost_name, :ghost_type_id, :location_name, :location_type_id, :customer_id
@@ -46,12 +47,18 @@ class Haunting
 
   def neghostiation ()
     sql = "SELECT * FROM neghostiations WHERE haunting_id = #{@id}"
-    Neghostiation.map_items(sql)
+    result = Neghostiation.map_items(sql)
+  end
+
+  def customer ()
+    sql = "SELECT * FROM customers WHERE id = #{@customer_id}"
+    result = Customer.map_items(sql).first
   end
 
   def self.find(id)
-    sql = "SELECT * FROM HAUNTINGS WHERE id = #{id}"
-    SqlRunner.run(sql)
+    sql = "SELECT * FROM hauntings WHERE id = #{id}"
+    result = SqlRunner.run(sql).first
+    return Haunting.new(result)
   end
 
   def self.all()

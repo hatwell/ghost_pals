@@ -13,7 +13,7 @@
   <label for="hauntingid">Haunting being investigated</label>
   <select id="haunting-id" name="haunting_id">
   <% @hauntings.each do |haunting| %>
-  <option value="<%=haunting.id%>" >
+  <option value="<%=haunting.id%>" <%= "selected" if haunting.id == @haunting.id %> \>
     <%=haunting.haunting_name %>
     <% end %>
   </select>
@@ -34,8 +34,8 @@
 
   <label for="report">Please write a report of what took place when you carried out the investigation</label>
   <br>
-  <textarea name="report" rows="5" cols="30" placeholder="Your investigation report..." value ="<%= @neghostiation.report %>">
-
+  <textarea name="report" rows="5" cols="30" placeholder="Your investigation report...">
+    <%= @neghostiation.report %>
 </textarea>
 <br>
 

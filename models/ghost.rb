@@ -1,3 +1,5 @@
+require_relative('../models/location')
+
 class Ghost
   attr_reader :id
   attr_accessor :ghost_name, :ghost_type_id
@@ -27,6 +29,13 @@ class Ghost
     sql = "SELECT name FROM ghost_types WHERE id = #{@ghost_type_id} "
     result = GhostType.map_items(sql)
     return result[0].name
+  end
+
+  def location_sighted
+    sql = "SELECT * FROM hauntings WHERE ghost_name = '#{@ghost_name}'"
+    result = Location.map_items(sql)
+    return "" if result.first == nil
+    return result.first.location_name
   end
 
   def self.all()

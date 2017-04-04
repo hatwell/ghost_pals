@@ -6,6 +6,7 @@ require_relative('../models/investigator.rb')
 require_relative('../models/service.rb')
 
 
+
 get '/neghostiations/all' do
   @neghostiations = Neghostiation.all()
   erb ( :"investigators/index" )
@@ -13,17 +14,11 @@ end
 
 get '/neghostiations/new' do
   @hauntings = Haunting.all
+  @investigators = Investigator.all()
   @services = Service.all
-  erb( :"investigators/neghostiation_report" )
+  erb( :"investigators/new_report" )
 end
 
-post '/neghostiations/new' do
-    @haunting = Haunting.find(params['haunting_id'])
-    @hauntings = Haunting.all
-    @investigators = Investigator.all()
-    @services = Service.all
-    erb ( :"investigators/new_report" )
-end
 
 post '/new_neghostiation' do
   @hauntings = Haunting.all
@@ -31,7 +26,6 @@ post '/new_neghostiation' do
   @services = Service.all
   neghostiation = Neghostiation.new(params)
   neghostiation.save()
-
   redirect '/investigators/confirmation'
 
 end
@@ -41,6 +35,7 @@ get '/investigators/confirmation' do
 end
 
 get '/new_neghostiation' do
+  @haunting = Haunting.find(params['haunting_id'])
   @investigators = Investigator.all()
   erb ( :"investigators/new_report" )
 end
@@ -64,6 +59,7 @@ end
 #
 
 get '/neghostiations/:id/edit' do
+  @haunting = Haunting.find(params['haunting_id'].to_i)
   @hauntings = Haunting.all
   @investigators = Investigator.all()
   @services = Service.all

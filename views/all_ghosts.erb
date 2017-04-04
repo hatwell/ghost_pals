@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Ghost Name</th>
+    <th>Type of Ghost</th>
+    <th>Location Sighted</th>
+  </tr>
+
+    <% @ghosts.each do |ghost|%>
+  <tr>
+
+      <td><%=ghost.ghost_name%></td>
+      <td><%=ghost.ghost_type%></td>
+      <td><%=ghost.location_sighted%></td>
+
+  </tr>
+      <% end %>
+</table>

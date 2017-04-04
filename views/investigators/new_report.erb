@@ -2,6 +2,7 @@
   <label for="investigator-name">Select your name</label>
 
   <select id="investigator-name" name="investigator_id">
+    <option value="" disabled selected hidden>Please Choose...</option>
     <% @investigators.each do |investigator| %>
       <option value = "<%= investigator.id %>">
         <%= investigator.name %>
@@ -10,8 +11,10 @@
   </select>
 
   <br><br>
-  <label for="hauntingid">Haunting being investigated</label>
+  <label for="haunting-id">Haunting being investigated</label>
+
   <select id="haunting-id" name="haunting_id">
+  <option value="" disabled selected hidden>Please Choose...</option>
   <% @hauntings.each do |haunting| %>
   <option value="<%=haunting.id%>" >
     <%=haunting.haunting_name %>

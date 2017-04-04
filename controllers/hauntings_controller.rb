@@ -16,11 +16,17 @@ get '/hauntings' do
   erb(:all_hauntings)
 end
 
+
 get '/hauntings/new' do
   @ghost_types = GhostType.all()
   @location_types = LocationType.all()
   @customers = Customer.all()
   erb(:"hauntings/new_haunting")
+end
+
+get '/hauntings/:id' do
+  @haunting = Haunting.find(params['id'])
+  erb(:"hauntings/haunting_details")
 end
 
 post('/hauntings') do

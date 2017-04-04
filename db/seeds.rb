@@ -71,7 +71,7 @@ ghosts = ['Spooky Jim', 'The Leith Poltergheist', 'Old Mary', 'Black Spectre', '
 ghosts.sort!
 ghosts.each do |ghost|
     newGhost = Ghost.new({
-    'name' => ghost,
+    'ghost_name' => ghost,
     'ghost_type_id' => GhostType.all.sample.id
     })
     newGhost.save
@@ -91,6 +91,18 @@ haunting1 = Haunting.new ({
   'customer_id' => Customer.all.sample.id
 })
 haunting1.save()
+
+haunting2 = Haunting.new ({
+  'haunting_name' => '4th July, my flat',
+  'haunting_date' => '4/2/2017',
+  'haunting_description' => 'it was very spooky',
+  'ghost_name' => Ghost.all[0].ghost_name,
+  'ghost_type_id' => GhostType.all.sample.id,
+  'location_name' => 'my house',
+  'location_type_id' => Location.all[1].location_type_id,
+  'customer_id' => Customer.all.sample.id
+})
+haunting2.save()
 
 Investigator.delete_all
 investigator1 = Investigator.new({

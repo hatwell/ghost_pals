@@ -15,6 +15,18 @@ label {
   padding: 10px;
 }
 
+td {
+  border: 1px solid grey;
+}
+
+footer {
+           background-color: transparent;
+           width: 100%;
+           bottom: 0;
+           position: fixed;
+           text-align: center;
+       }
+
 .flex-container {
   flex-direction: column;
   justify-content:center;

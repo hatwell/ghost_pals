@@ -1,3 +1,8 @@
+require_relative ('./investigator')
+require_relative ('./location')
+require_relative ('./service')
+
+
 class Neghostiation
   attr_reader :id
   attr_accessor :neghostiation_date, :investigator_id, :haunting_id, :services_id, :report, :successful
@@ -8,7 +13,11 @@ class Neghostiation
     @haunting_id = params['haunting_id'].to_i
     @services_id = params['services_id'].to_i
     @report = params['report']
-    @successful = params['successful']
+      if params['successful'] == "t"
+        @successful = "true"
+      else
+        @successful = "false"
+      end
     @id = params['id'].to_i
   end
 
@@ -29,8 +38,20 @@ class Neghostiation
   end
 
   def location()
-    sql = "SELECT locations.name FROM location INNER JOIN hauntings WHERE id = #{@haunting_id}"
-    result = SqlRunner.run(sql)
+    sql = "SELECT * FROM hauntings WHERE id = #{@haunting_id}"
+    result = Haunting.map_items(sql)
+    return result.first.location_name
+  end
+
+  def investigator()
+    sql = "SELECT investigators.name FROM investigators WHERE id = #{@investigator_id}"
+    Investigator.map_items(sql).first
+  end
+
+  def services
+    sql = "SELECT name FROM services WHERE id = #{@services_id}"
+
+    return  Service.map_items(sql).first.name
   end
 
   def self.find_by_id(id)

@@ -1,3 +1,37 @@
-<%= @neghostiation.report %>
+
 
 <a href="/neghostiations/<%=@neghostiation.id%>/edit">Edit or update this report?</a>
+<div class="">
+
+
+
+<div class="">
+date: <%= @neghostiation.neghostiation_date %>
+</div>
+
+<div class="">
+investigator: <%= @neghostiation.investigator.name %>
+</div>
+
+<div class="">
+<%= @neghostiation.haunting_id%>
+</div>
+
+<div class="">
+  Services carried out:
+  <%=@neghostiation.services%>
+</div>
+
+<div class="">
+<%=@neghostiation.report  %>
+</div>
+
+<div class="">
+Was the investigation successful? <%= @neghostiation.successful  %>
+</div>
+
+<div class="">
+
+</div>
+
+</div>

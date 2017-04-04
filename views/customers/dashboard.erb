@@ -1,4 +1,6 @@
 
+<a href="/hauntings/new">Report a new haunting</a>
+
 <table>
 
   <tr class="table_header">
@@ -9,6 +11,7 @@
     <td>Ghost Name</td>
     <td>Ghost Type</td>
     <td>Description</td>
+    <td>More Details</td>
     <td>Link to Investigation</td>
   </tr >
     <% for haunting in @customer.hauntings %>
@@ -20,7 +23,8 @@
     <td><%=haunting.ghost_name %></td>
     <td><%=haunting.ghost_type %></td>
     <td><%=haunting.haunting_description %></td>
-    <td><%=haunting.neghostiation %></td>
+    <td><a href="/hauntings/<%=haunting.id %>">Show</a></td>
+    <td><a href="/neghostiations/<%=haunting.neghostiation.first.id %>">Investigation Report</a></td>
 
   </tr>
   <% end %>
