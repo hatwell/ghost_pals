@@ -1,14 +1,51 @@
-/** {
-  border: 1px solid red;
-  font-family: helvetica;
-}*/
+@font-face { font-family: Cardo; src: url('/fonts/cardo/Cardo-Regular.ttf'); }
+@font-face { font-family: Cardo; font-weight: bold; src: url('/fonts/cardo/Cardo-Bold.ttf');}
+@font-face { font-family: Cardo; src: url('/fonts/cardo/Cardo-Regular.ttf'); }
+@font-face { font-family: Josephin Sans; src: url('/fonts/josefinsans/JosefinSans-Regular.ttf'); }
+
+
+
+* {
+  /*border: 1px solid red;*/
+  font-family: Josephin Sans;
+}
+
+nav {
+  background-color: black;
+  color:white;
+
+}
+
+nav > ul >li > a:visited {
+  color: rgb(184, 183, 181);
+}
+
+nav > ul >li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  text-align: center;
+  width: 20%;
+  display: inline-block;
+  list-style: none;
+}
 
 body {
-  background-color: linen;
+  background-image: url('/img/brickwall.png ')
 }
 
 p {
   font-family: helvetica;
+}
+
+h2 {
+  font-family: Cardo;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: Cardo;
+  font-weight: bold;
 }
 
 label {
@@ -27,18 +64,19 @@ footer {
            text-align: center;
        }
 
-.flex-container {
-  flex-direction: column;
+.flex-container-front {
+  /*flex-direction: row;*/
   justify-content:center;
   text-align: center;
 }
 
 .home_screen_button {
-  display:block;
+  /*display:block;
   justify-content:space-around;
   align-items:center;
-  text-align: center;
+  text-align: center;*/
   border: dashed 1px grey;
+  margin: 5px;
 }
 
 .error_page {

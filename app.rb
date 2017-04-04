@@ -10,6 +10,7 @@ require_relative('models/ghost')
 
 
 get '/' do
+  @ghosts = Ghost.all
   erb( :index )
 end
 

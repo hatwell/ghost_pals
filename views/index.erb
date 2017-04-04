@@ -1,14 +1,24 @@
 <div id="home_page_body_wrapper">
+<div id="front-page-titles">
 
 <h2>Welcome to Ghost Pals Inc.</h2>
 
 <h3>Please select from the following:</h3>
 
+</div>
 
-<div class="flex-container">
+<div class="columns">
 
 
-<div id="new_customer" class="home_screen_button">
+  <div class="column home_screen_button">
+    <p><a>
+        Are you a....?
+      </a>
+    </p>
+  </div>
+
+
+<div id="new_customer" class="column home_screen_button">
   <p>
     <a href="/customers/new">
       New Customer
@@ -16,7 +26,7 @@
   </p>
 </div>
 <br>
-<div id="existing_customer" class="home_screen_button">
+<div id="existing_customer" class="column home_screen_button">
   <p>
     <a href="/customers">
       Existing Customer
@@ -24,7 +34,7 @@
   </p>
 </div>
 <br>
-<div id="investigator" class="home_screen_button">
+<div id="investigator" class="column home_screen_button">
   <p>
     <a href="/neghostiations/all">
       Investigator
@@ -35,7 +45,7 @@
 </div>
 
 <div class="">
-  Number of ghosts reported
+  Number of ghosts reported: <%= @ghosts.length %>
 </div>
 <div class="">
   Most haunted location type
