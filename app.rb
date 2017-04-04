@@ -5,11 +5,13 @@ require_relative('controllers/customers_controller')
 require_relative('controllers/hauntings_controller')
 require_relative('controllers/neghostiations_controller')
 require_relative('models/ghost')
+require_relative('models/service')
 
 
 
 
 get '/' do
+  @services = Service.all
   @ghosts = Ghost.all
   erb( :index )
 end

@@ -31,21 +31,8 @@ nav > ul >li {
 }
 
 body {
+  padding: 10px;
   background-image: url('/img/brickwall.png ')
-}
-
-p {
-  font-family: helvetica;
-}
-
-h2 {
-  font-family: Cardo;
-  font-weight: bold;
-}
-
-h3 {
-  font-family: Cardo;
-  font-weight: bold;
 }
 
 label {
@@ -57,18 +44,45 @@ td {
 }
 
 footer {
-           background-color: transparent;
-           width: 100%;
-           bottom: 0;
-           position: fixed;
-           text-align: center;
-       }
+   background-color: transparent;
+   padding-bottom: 5px;
+   width: 100%;
+   bottom: 0;
+   position: fixed;
+   text-align: center;
+}
 
-.flex-container-front {
-  /*flex-direction: row;*/
+.flex-container-body {
+  flex-direction: column;
   justify-content:center;
   text-align: center;
 }
+
+.flex-container-title {
+  flex-direction: column;
+}
+
+.flex-container-links-pic {
+  flex-direction: row;
+
+}
+
+.flex-container-links-1 {
+  flex-direction: row;
+}
+
+.flex-container-links-2 {
+  flex-direction: row;
+}
+
+.flex-container-tiles-1 {
+  flex-direction: row;
+}
+
+.flex-container-tiles-2 {
+  flex-direction: row;
+}
+
 
 .home_screen_button {
   /*display:block;
@@ -102,18 +116,36 @@ footer {
 }
 
 #new_customer {
-  background-color: lightskyblue;
+  background-color: rgb(88, 86, 87);
 }
 
 #existing_customer {
-  background-color: aquamarine;
+  background-color: rgb(126, 126, 126);
 }
 
 #investigator {
-  background-color: lightpink;
+  background-color: rgb(204, 204, 204);
 }
 
 #home_page_body_wrapper {
   display: block;
   align-items:center;
+}
+
+#front-page-titles {
+  font-family: Cardo;
+  font-weight: bold;
+}
+
+.front-tile {
+  /*margin-left: 20px;*/
+  /*margin: 10px;*/
+}
+
+.tile-title {
+  border: red solid 1px;
+}
+
+.tile-subtitle {
+  border: blue solid 1px;
 }
