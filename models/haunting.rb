@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner')
+require_relative('../models/ghost_type')
 class Haunting
   attr_reader :id
   attr_accessor :haunting_name, :haunting_id, :haunting_description, :haunting_date, :ghost_name, :ghost_type_id, :location_name, :location_type_id, :customer_id
@@ -31,7 +33,20 @@ class Haunting
   end
 
   def location_type()
-    sql = "SELECT location_types.name FROM location_types WHERE id = #{@location_type_id}"
+    sql = "SELECT * FROM location_types WHERE id = #{@location_type_id}"
+    location_type = LocationType.map_items(sql).first()
+    return location_type.name
+  end
+
+  def ghost_type
+    sql = "SELECT * FROM ghost_types WHERE id = #{@ghost_type_id}"
+    ghost_type = GhostType.map_items(sql).first()
+    return ghost_type.name
+  end
+
+  def neghostiation ()
+    sql = "SELECT neghostiations.* FROM neghostiations WHERE haunting_id = #{@id}"
+    Neghostiation.map_items(sql)
   end
 
   def self.find(id)

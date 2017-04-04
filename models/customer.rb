@@ -36,7 +36,7 @@ class Customer
 
   def hauntings()
     sql = "SELECT * FROM hauntings WHERE customer_id = #{@id}"
-    Haunting.map_items(sql).first
+    Haunting.map_items(sql)
   end
 
   def neghostiations()
