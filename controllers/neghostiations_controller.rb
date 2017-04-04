@@ -17,12 +17,23 @@ get '/neghostiations/new' do
   erb( :"investigators/neghostiation_report" )
 end
 
-post '/neghostiations' do
-  @haunting = Haunting.find(params['haunting_id'])
+post '/neghostiations/new' do
+    @haunting = Haunting.find(params['haunting_id'])
+    @hauntings = Haunting.all
+    @investigators = Investigator.all()
+    @services = Service.all
+    erb ( :"investigators/new_report" )
+end
+
+post '/new_neghostiation' do
   @hauntings = Haunting.all
   @investigators = Investigator.all()
   @services = Service.all
-  erb ( :"investigators/new_report" )
+  neghostiation = Neghostiation.new(params)
+  neghostiation.save()
+  erb(:"investigators/confirmation")
+  redirect '/neghostiations/all'
+
 end
 
 get '/new_neghostiation' do

@@ -45,7 +45,7 @@ class Haunting
   end
 
   def neghostiation ()
-    sql = "SELECT neghostiations.* FROM neghostiations WHERE haunting_id = #{@id}"
+    sql = "SELECT * FROM neghostiations WHERE haunting_id = #{@id}"
     Neghostiation.map_items(sql)
   end
 

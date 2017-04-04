@@ -1,4 +1,4 @@
-<form method = 'post' action='/new_neghostiation' >
+<form method = 'post' action='/new_neghostiation'>
   <label for="investigator-name">Select your name</label>
 
   <select id="investigator-name" name="investigator_id">
@@ -13,7 +13,7 @@
   <label for="hauntingid">Haunting being investigated</label>
   <select id="haunting-id" name="haunting_id">
   <% @hauntings.each do |haunting| %>
-  <option value="<%=haunting.id%>">
+  <option value="<%=haunting.id%>" >
     <%=haunting.haunting_name %>
     <% end %>
   </select>
