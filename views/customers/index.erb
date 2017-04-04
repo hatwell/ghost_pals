@@ -1,11 +1,16 @@
-<h2>Please select your email address from list below:</h2>
-<p>
+<h2>Please select your email</h2>
+<div class="flex-container-customers">
+
+
 
       <% for customer in @customers %>
+      <div class="customer_email flex-item">
+
       <p>
        <a href="/customers/<%=customer.id%>"><%=customer.email_address%></a>
        </p>
+       </div>
       <% end %>
 
 
-</p>
+</div>

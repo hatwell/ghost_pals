@@ -23,5 +23,9 @@ end
 
 get '/customers/:id' do
   @customer = Customer.find_by_id(params[:id])
-  erb( :"customers/dashboard")
+  if @customer.hauntings.size > 0
+    erb( :"customers/dashboard")
+  else
+    erb( :"customers/empty_dashboard")
+  end
 end

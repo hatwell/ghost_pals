@@ -16,6 +16,12 @@ nav {
 
 }
 
+table {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
 nav > ul >li > a:visited {
   color: rgb(184, 183, 181);
 }
@@ -32,7 +38,7 @@ nav > ul >li {
 
 body {
   padding: 10px;
-  background-image: url('/img/brickwall.png ')
+  background-image: url('/img/brickwall.png ');
 }
 
 label {
@@ -41,6 +47,7 @@ label {
 
 td {
   border: 1px solid grey;
+  padding: 7px;
 }
 
 footer {
@@ -52,7 +59,13 @@ footer {
    text-align: center;
 }
 
+.table_header {
+  width: 80%;
+  text-align: center;
+}
+
 .flex-container-body {
+  display: flex;
   flex-direction: column;
   justify-content:center;
   text-align: center;
@@ -64,7 +77,8 @@ footer {
 
 .flex-container-links-pic {
   flex-direction: row;
-
+  background: black;
+  color: white;
 }
 
 .flex-container-links-1 {
@@ -83,14 +97,18 @@ footer {
   flex-direction: row;
 }
 
+.flex-item-links-pic {
+  flex-grow: 1;
+}
 
 .home_screen_button {
-  /*display:block;
-  justify-content:space-around;
+  display:block;
   align-items:center;
-  text-align: center;*/
+  text-align: center;
   border: dashed 1px grey;
+  background-color: rgb(137, 139, 142);
   margin: 5px;
+  height: 25%;
 }
 
 .error_page {
@@ -137,15 +155,45 @@ footer {
   font-weight: bold;
 }
 
-.front-tile {
-  /*margin-left: 20px;*/
-  /*margin: 10px;*/
+#new_report {
+  padding: 10px;
+  box-shadow: 2px 2px 5px #888888;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  background: rgb(117, 119, 115);
+  color: white;
 }
 
-.tile-title {
-  border: red solid 1px;
+.flex-container-customers {
+  display: flex;
+  flex-direction: row;
 }
 
-.tile-subtitle {
-  border: blue solid 1px;
+.customer_email {
+  margin: 3px;
+  padding: 2px 0px 2px 0px;
+  border: grey dashed 0.5px;
+  box-shadow: 1px 1px 1px #888888;
+}
+
+#links-pic-row {
+  display:flex;
+  margin-bottom:20px;
+  height: 300px;
+}
+
+.links-row {
+  width: 45%;
+  margin:5px;
+}
+
+#ghost-panel {
+  background-color: black;
+  color: white;
+}
+
+#lil-ghost {
+  height: 50%;
+  width: auto;
 }
