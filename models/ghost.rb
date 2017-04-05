@@ -56,14 +56,14 @@ class Ghost
     return type_counter
   end
 
-  # @ghost_type_count = Ghost.ghost_types
+  # # @ghost_type_count = Ghost.ghost_types
+  # #
+  # # for ghost in @ghost_type_count.keys
   #
-  # for ghost in @ghost_type_count.keys
-
-  def self.ghost_type_count(ghost_type)
-    type_counter = self.ghost_types()
-    return type_counter[ghost_type]
-  end
+  # def self.ghost_type_count(ghost_type)
+  #   type_counter = self.ghost_types()
+  #   return type_counter[ghost_type]
+  # end
 
   def self.all()
     sql = "SELECT * FROM ghosts"

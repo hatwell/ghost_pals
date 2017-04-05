@@ -8,7 +8,6 @@ require_relative('../models/location_type')
 require_relative('../models/ghost')
 require_relative('../models/location')
 require_relative('../models/neghostiation')
-require_relative('../models/person')
 require_relative('../models/service')
 
 LocationType.delete_all()

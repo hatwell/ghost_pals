@@ -1,59 +1,75 @@
-<div class="flex-container-body" id="home_page_body_wrapper">
-
-<div class="flex-container-title" id="front_page_titles">
-
-
-
-</div>
-
-<div id="links-pic-row">
-
-  <div id = "ghost-panel" class="links-row">
-    <h2>Welcome to Ghost Pals Inc.</h2>
-
-    <h3>Please select from the following:</h3>
-    <br><br>
-    <img id="lil-ghost" src="/img/lil_ghost.png" alt="">
-    <img id="lil-ghost" src="/img/lil_ghost.png" alt="">
-
+<div class="container">
+  <!-- title row-->
+  <div class="row" id="front-page-title">
+    <h2>Ghost Pals Inc.</h2>
+    <h3>Paranormal Investigators</h3>
   </div>
 
+    <!-- row with ghost picture and buttons-->
 
-  <div class="links-row">
-    <div class="links-two">
+    <div class="row">
+
+      <div class="col-md-2 image-col">
+        <img id="ghost-image"  src="/img/ghost.gif"/>
+      </div>
+      <div id = "user-buttons" class="col-md-8">
+        <center>
+        <div class="user-button row">
+            are you a ?
+          </div>
+          <div class="user-button row">
+            new customer
+          </div>
+
+          <div class="user-button row">
+            existing customer
+          </div>
+          <div class="user-button row">
+            investigator
+          </div>
+
+        </div>
+        </center>
 
 
-    <div class="front-page-link">
-
-    <p>Are you a....</p>
+      <div class="col-md-2 image-col">
+        <img id="ghost-image"  src="/img/ghost.gif"/>
+      </div>
     </div>
-    <div class="front-page-link home_screen_button">
+      </div>
+    <!-- ghost stats row -->
 
-    <a href="/customers/new">New Customer</a>
+    <div class="row">
+      <% for key in @ghost_types.keys %>
+      <div class="col-sm-<%=12/ @length%>">
+
+
+      <p>Number of <%=key%>s reported:</p> <p> <%= @ghost_types[key] %></p>
+            </div>
+      <% end %>
     </div>
+
+    <!-- services offered -->
+
+    <div class="row">
+      <div class="col-md-3">
+        Services offered
+      </div>
+      <div class="col-md-7">
+        <div class="row">
+          <% for service in @services %>
+            <div class="col-md-2">
+          <%=service.name %>
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button type="button" name="button">Contact Us</button>
+      </div>
+
     </div>
-    <div class="links-two">
-
-
-    <div class="front-page-link home_screen_button">
-
-    <a href="/customers">Existing Customer</a>
-    </div>
-    <div class="front-page-link home_screen_button">
-
-    <a href="/neghostiations/all">Investigator</a>
-    </div>
-    </div>
-  </div>
-
-
-
-</div>
-
-
-
-
-
 
 
 </div>
