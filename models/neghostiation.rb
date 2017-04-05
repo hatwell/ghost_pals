@@ -14,22 +14,22 @@ class Neghostiation
     @services_id = params['services_id'].to_i
     @report = params['report']
       if params['successful'] == "t"
-        @successful = "true"
+        @successful = "Yes"
       else
-        @successful = "false"
+        @successful = "No"
       end
     @id = params['id'].to_i
   end
 
   def save()
     sql = "INSERT INTO neghostiations(neghostiation_date, investigator_id, haunting_id, services_id, report, successful) VALUES
-    ('#{@neghostiation_date}', #{@investigator_id}, #{@haunting_id}, #{@services_id}, '#{@report}', #{@successful} ) RETURNING *"
+    ('#{@neghostiation_date}', #{@investigator_id}, #{@haunting_id}, #{@services_id}, '#{@report}', '#{@successful}' ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE hauntings SET (haunting_date, haunting_description, ghost_name, ghost_type_id) = ('#{@neghostiation_date}', #{@investigator_id}, #{@haunting_id}, #{@services_id}, '#{@report}', #{@successful} )"
+    sql = "UPDATE hauntings SET (haunting_date, haunting_description, ghost_name, ghost_type_id) = ('#{@neghostiation_date}', #{@investigator_id}, #{@haunting_id}, #{@services_id}, '#{@report}', '#{@successful}' )"
     SqlRunner.run(sql)
   end
 

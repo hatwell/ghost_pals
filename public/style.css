@@ -10,14 +10,23 @@
   font-family: Josephin Sans;
 }
 
+h2 {
+  font-family: Cardo;
+}
+
+th {
+  text-align: none;
+}
+
 nav {
+  top:0;
   background-color: black;
   color:white;
 
 }
 
 table {
-  width: 80%;
+  width: 90%;
   text-align: center;
   margin: auto;
 }
@@ -39,6 +48,7 @@ nav > ul >li {
 body {
   padding: 0px;
   background-image: url('/img/brickwall.png ');
+  margin-bottom: 100px;
 }
 
 label {
@@ -56,7 +66,9 @@ input {
 
 td {
   border: 1px solid grey;
-  padding: 7px;
+  padding: 10px !important;
+  margin: 2px;
+  vertical-align: text-top;
 }
 
 footer {
@@ -101,13 +113,13 @@ footer {
   font-weight: bold;
 }
 
-#new_report {
-  padding: 10px;
+.new_report {
+  padding: 20px;
   box-shadow: 2px 2px 5px #888888;
   display: inline-block;
   text-align: center;
   margin: auto;
-  background: rgb(117, 119, 115);
+  background: rgb(171, 171, 171);
   color: white;
 }
 
@@ -135,7 +147,7 @@ footer {
 	display: block;
 }
 
-#front-page-title {
+.title {
   text-align: center;
   font-family: Cardo;
 }
@@ -164,6 +176,20 @@ footer {
   height: 50px;
 }
 
+                                  /***********************/
+
+/* Front Page styes */
+
+.ghost-type {
+  color: linen;
+  padding-top: 5px;
+  margin: 2px;
+  background-image: url("/img/stardust.png");
+  height: auto;
+}
+
+
+
                                 /**********************************/
 
 /*New customer page styles */
@@ -189,4 +215,38 @@ footer {
 
 .haunting-text-input {
   text-align: justify;
+}
+
+#haunting-description {
+  margin: auto;
+}
+
+.submit-button {
+  margin-bottom:100px;
+}
+
+                              /**********************************/
+
+
+/* Haunting Report Page Styles */
+
+#haunting-report {
+  text-align: justify;
+  background-image: url('/img/ep_naturalwhite.png ');
+  margin-top: 1%;
+}
+
+.haunting-report-element {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+                                /**********************************/
+
+
+/* Empty Dash page Styles */
+
+#empty-dash {
+  text-align: center;
+  margin:auto;
+  padding-top: 50px;
 }

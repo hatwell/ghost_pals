@@ -1,14 +1,17 @@
+<div class="title">
+
 <h2>Please select your email</h2>
+</div>
 <div class="flex-container-customers">
 
 
 
       <% for customer in @customers %>
-      <div class="customer_email flex-item">
+      <div class="col-md-3">
 
       <p>
        <a href="/customers/<%=customer.id%>"><%=customer.email_address%></a>
-       </p>
+ </p><br>
        </div>
       <% end %>
 

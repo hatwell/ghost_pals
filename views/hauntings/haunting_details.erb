@@ -1,29 +1,60 @@
 
+<div class="container">
+  <div class="placeholder">
 
-<div class="">
-date: <%= @haunting.haunting_date %>
+  </div>
+  <center>
+
+<div class="title">
+
+
+  <h3>Haunting Report</h3>
+  </div>
+    </center>
+
+  <div class="row">
+
+    <div class="col-md-3">
+
+    </div>
+<div class="col-md-6" id="haunting-report">
+
+    <h3><%= @haunting.haunting_name %></h3>
+<p><b>Date:</b> &nbsp;<%= @haunting.haunting_date %></p>
+
+<br>
+<div class="haunting-report-element">
+<b>Customer:</b> &nbsp; <%= @haunting.customer.name %>
+</div>
+<br>
+<div class="haunting-report-element">
+<b>Account of haunting</b> &nbsp;<%=@haunting.haunting_description %>
+</div>
+<br>
+<div class="haunting-report-element">
+<b>Name of ghost</b> &nbsp;<%=@haunting.ghost_name %>
+</div>
+<br>
+<div class="haunting-report-element">
+<b>Type of ghost seen</b> &nbsp;<%=@haunting.ghost_type %>
+<br>
+</div>
+<div class="placeholder">
+
+</div>
+<div class="placeholder">
+
+  </div>
+  <div class="placeholder">
+
+    </div>
+</div>
+<div class="col-md-3">
+
+</div>
+</div>
 </div>
 
-<div class="">
-customer: <%= @haunting.customer.name %>
-</div>
 
-<div class="">
-
-</div>
-
-
-<div class="">
-<%=@haunting.haunting_description %>
-</div>
-
-<div class="">
-<%=@haunting.ghost_name %>
-</div>
-
-<div class="">
-<%=@haunting.ghost_type %>
-
-</div>
 
 </div>

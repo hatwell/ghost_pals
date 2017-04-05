@@ -92,13 +92,13 @@ haunting1 = Haunting.new ({
 haunting1.save()
 
 haunting2 = Haunting.new ({
-  'haunting_name' => '4th July, my flat',
-  'haunting_date' => '4/2/2017',
-  'haunting_description' => 'it was very spooky',
-  'ghost_name' => Ghost.all[0].ghost_name,
+  'haunting_name' => 'Poltergheist at CodeClan',
+  'haunting_date' => '4/3/2017',
+  'haunting_description' => 'Proin feugiat, arcu non interdum fringilla, magna massa rhoncus ex, non semper urna nibh a nibh. Morbi commodo lobortis tortor, sit amet sagittis odio tincidunt eu. Nulla eu velit et sem aliquet laoreet ultrices sit amet metus. Fusce in pulvinar lorem. Pellentesque et elit id elit finibus vulputate. Donec tempus lectus arcu. Nullam rhoncus turpis non neque molestie vehicula. Aenean vehicula dignissim eleifend. Vivamus id molestie augue, non sodales leo. Quisque sollicitudin interdum libero. Suspendisse eu dolor leo. Quisque interdum, nisl vel iaculis aliquam, neque nibh aliquet mi, ut vehicula enim velit eget nisl. Maecenas vitae massa tellus. Aliquam et ullamcorper tellus, et bibendum sem.',
+  'ghost_name' => 'the abbeyhill poltergheist',
   'ghost_type_id' => GhostType.all.sample.id,
-  'location_name' => 'my house',
-  'location_type_id' => Location.all[1].location_type_id,
+  'location_name' => 'CodeClan, Castle Terrace',
+  'location_type_id' => Location.all[2].location_type_id,
   'customer_id' => Customer.all.sample.id
 })
 haunting2.save()

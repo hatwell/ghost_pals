@@ -1,6 +1,6 @@
 <div class="container">
   <!-- title row-->
-  <div id="front-page-title">
+  <div class="title">
     <h2>Ghost Pals Inc.</h2>
     <h3>Paranormal Investigators</h3>
   </div>
@@ -9,7 +9,7 @@
 
     <div class="row">
 
-      <div class="col-md-2">
+      <div class="col-md-2"><br>
         <img id="ghost-image"src="/img/ghost.gif"/>
       </div>
       <div id = "user-buttons" class="col-md-8">
@@ -27,7 +27,7 @@
 
           </div>
           <div class="user-button row">
-            <p class="user-button-button"><a href="/neghostiations">investigator ?</a></p>
+            <p class="user-button-button"><a href="/neghostiations/all">investigator ?</a></p>
 
           </div>
 
@@ -35,7 +35,7 @@
         </center>
 
 
-      <div class="col-md-2 image-col">
+      <div class="col-md-2 image-col"><br>
         <img id="ghost-image"  src="/img/ghost.gif"/>
       </div>
     </div>
@@ -48,10 +48,12 @@
 
     <div class="row">
       <% for key in @ghost_types.keys %>
-      <div class="col-sm-<%=12/ @length%>">
+      <div class="ghost-type col-md-<%=12/ @length %>">
 
 
-      <p>Number of <%=key%>s reported:</p> <p> <%= @ghost_types[key] %></p>
+      <%=key.capitalize%>s <br> reported
+        <br>
+      <%= @ghost_types[key] %>
             </div>
       <% end %>
     </div>
@@ -73,7 +75,7 @@
         </div>
       </div>
       <div class="col-md-2">
-        <button type="button" name="button">Contact Us</button>
+        <button type="button" name="button"><a href="mailto:caroline.hatwell@gmail.com">Contact</a></button>
       </div>
 
     </div>

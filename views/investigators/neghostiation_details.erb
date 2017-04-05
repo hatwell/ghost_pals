@@ -1,37 +1,65 @@
 
+<div class="container">
+  <div class="placeholder">
 
-<a href="/neghostiations/<%=@neghostiation.id%>/edit">Edit or update this report?</a>
-<div class="">
+  </div>
+  <center>
+
+<div class="title">
 
 
+  <h3>Investigation Report</h3>
+  </div>
+    </center>
 
-<div class="">
-date: <%= @neghostiation.neghostiation_date %>
+  <div class="row">
+
+    <div class="col-md-3">
+
+    </div>
+<div class="col-md-6" id="haunting-report">
+
+    <h3><%= @neghostiation.neghostiation_date %>, <%= @neghostiation.location %></h3>
+
+<br>
+<div class="haunting-report-element">
+  investigator: <%= @neghostiation.investigator.name %>
 </div>
-
-<div class="">
-investigator: <%= @neghostiation.investigator.name %>
-</div>
-
-<div class="">
-<%= @neghostiation.haunting_id%>
-</div>
-
-<div class="">
+<br>
+<div class="haunting-report-element">
   Services carried out:
   <%=@neghostiation.services%>
 </div>
-
-<div class="">
+<br>
+<div class="haunting-report-element">
+  <p><b>Report:</b></p>
 <%=@neghostiation.report  %>
+<br><br>
+<div class="haunting-report-element">
+<p><b>Has the ghost been calmed or moved on?</b></p>
+<%= @neghostiation.successful  %>
+<br>
+</div>
+<div class="placeholder">
+
+</div>
+<div class="placeholder">
+
+  </div>
+  <div class="placeholder">
+
+    </div>
+</div>
+<div class="col-md-3">
+
+</div>
+</div>
 </div>
 
-<div class="">
-Was the investigation successful? <%= @neghostiation.successful  %>
-</div>
 
-<div class="">
 
 </div>
+
+
 
 </div>

@@ -34,7 +34,7 @@ class Ghost
   def location_sighted
     sql = "SELECT * FROM hauntings WHERE ghost_name = '#{@ghost_name}'"
     result = Location.map_items(sql)
-    return "" if result.first == nil
+    return "none" if result.first == nil
     return result.first.location_name
   end
 
