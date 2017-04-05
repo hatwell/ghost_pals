@@ -28,8 +28,13 @@
     <td><%=haunting.ghost_type %></td>
     <td><%=haunting.haunting_description %></td>
     <td><a href="/hauntings/<%=haunting.id %>">Show</a></td>
-    <td><a href="/neghostiations/<%=haunting.neghostiation.first.id %>">Investigation Report</a></td>
 
+    <td>
+      <% if haunting.neghostiation.first != nil %>
+        <a href="/neghostiations/<%=haunting.neghostiation.first.id  %>">Investigation Report</a></td>
+      <% else %>
+        Nope :(
+      <% end %>
   </tr>
   <% end %>
 </table>

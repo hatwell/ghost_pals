@@ -44,6 +44,8 @@ class Ghost
     return result.first['name']
   end
 
+  #Class Methods
+
   def self.ghost_types
     @ghosts = Ghost.all()
     type_counter = Hash.new()
@@ -52,6 +54,15 @@ class Ghost
       type_counter.has_key?(type) ? type_counter[type] += 1 : type_counter[type] = 1
     end
     return type_counter
+  end
+
+  # @ghost_type_count = Ghost.ghost_types
+  #
+  # for ghost in @ghost_type_count.keys
+
+  def self.ghost_type_count(ghost_type)
+    type_counter = self.ghost_types()
+    return type_counter[ghost_type]
   end
 
   def self.all()

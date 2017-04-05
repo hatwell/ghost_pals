@@ -43,9 +43,4 @@ class GhostType
     SqlRunner.run(sql)
   end
 
-
-
-
-
-
 end

@@ -7,12 +7,16 @@ require_relative('controllers/neghostiations_controller')
 require_relative('models/ghost')
 require_relative('models/service')
 
+# number of polergeists: <%= Ghost.['poltergg']%>
 
-
+# for key in ghost_types.keys
+#   number of <%= key
+# end
 
 get '/' do
   @services = Service.all
   @ghosts = Ghost.all
+  @ghost_types = Ghost.ghost_types
   erb( :index )
 end
 
