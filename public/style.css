@@ -138,16 +138,15 @@ footer {
 
 /* Front Page Styles */
 #ghost-image {
-  height:200px;
+  height:150px;
   width:auto;
-  margin-left:40px;
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 #front-page-title {
-  display:inline;
-  margin:auto;
-  background-color: grey;
-  opacity : 0.6;
+  text-align: center;
   font-family: Cardo;
 }
 
@@ -155,11 +154,22 @@ footer {
   height: 20%;
 }
 
-.user-button {
-  display: block;
+.user-button-question {
+  color: black;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.user-button-button {
+  width: 70%;
+  display: inline-block;
   background-color:rgb(114, 163, 190);
   color: white;
   margin-top: 2px;
   margin-bottom: 2px;
   font-size: 1.5em;
+}
+
+.placeholder {
+  height: 100px;
 }
