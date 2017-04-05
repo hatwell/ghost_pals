@@ -46,9 +46,13 @@
       </div>
     <!-- ghost stats row -->
 
-    <div class="row">
+    <div id="ghost-types-row" class="row">
+      <center>
+
+
+      &nbsp;
       <% for key in @ghost_types.keys %>
-      <div class="ghost-type col-md-<%=12/ @length %>">
+      <div class="ghost-type col-sm-<%=12/ (@length+1) %>">
 
 
       <%=key.capitalize%>s <br> reported
@@ -56,6 +60,7 @@
       <%= @ghost_types[key] %>
             </div>
       <% end %>
+            </center>
     </div>
 
     <!-- services offered -->

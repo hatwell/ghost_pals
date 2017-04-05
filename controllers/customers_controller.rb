@@ -8,10 +8,12 @@ get '/customers' do
 end
 
 get '/customers/dashboard' do
+    @customers = Customer.all()
   erb( :"customers/dashboard")
 end
 
 get '/customers/new' do
+    @customers = Customer.all()
   erb( :"customers/new_customer" )
 end
 
@@ -26,7 +28,7 @@ post '/customers' do
 end
 
 get '/customers/:id' do
-  @customer = Customer.find_by_id(params[:id])
+    @customer = Customer.find_by_id(params[:id])
   if @customer.hauntings.size > 0
     erb( :"customers/dashboard")
   else

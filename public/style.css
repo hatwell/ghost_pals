@@ -123,17 +123,16 @@ footer {
   color: white;
 }
 
-.flex-container-customers {
-  display: flex;
-  flex-direction: row;
-}
 
-.customer_email {
+.customer-email {
+  font-size: 1.2em;
   margin: 3px;
   padding: 2px 0px 2px 0px;
   border: grey dashed 0.5px;
   box-shadow: 1px 1px 1px #888888;
 }
+
+
 
                       /**********************************/
 
@@ -165,7 +164,9 @@ footer {
 .user-button-button {
   width: 70%;
   display: inline-block;
-  background-color:rgb(114, 163, 190);
+  background-color:transparent;
+  border-bottom: 1px slategrey dashed;
+  border-left: 1px slategrey dashed;
   color: white;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -179,6 +180,9 @@ footer {
                                   /***********************/
 
 /* Front Page styes */
+#ghost-types-row {
+  padding-left: 10px !important;
+}
 
 .ghost-type {
   color: linen;
@@ -239,6 +243,10 @@ footer {
 .haunting-report-element {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#report-box {
+  text-align: right;
 }
                                 /**********************************/
 

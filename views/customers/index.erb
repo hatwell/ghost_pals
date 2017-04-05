@@ -2,18 +2,26 @@
 
 <h2>Please select your email</h2>
 </div>
-<div class="flex-container-customers">
 
 
+<br>
 
       <% for customer in @customers %>
-      <div class="col-md-3">
+      <div class="row">
+            <div class="col-md-2">
 
-      <p>
-       <a href="/customers/<%=customer.id%>"><%=customer.email_address%></a>
- </p><br>
+            </div>
+            <div class="col-md-3">
+
+
+
+      <div class="customer-email">
+
+       <p><a href="/customers/<%=customer.id%>"><%=customer.email_address%></a> </p>
+
+       </div>
+      <br>
+
+       </div>
        </div>
       <% end %>
-
-
-</div>

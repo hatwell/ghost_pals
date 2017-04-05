@@ -1,3 +1,20 @@
+<div class="title">
+
+ <h3>File an Investation Report</h3></div>
+
+<div class="placeholder">
+
+</div>
+<div class="row">
+
+<div class="col-md-1">
+
+</div>
+
+<div class="col-md-11">
+
+
+
 <form method = 'post' action='/new_neghostiation'>
   <label for="investigator-name">Select your name</label>
 
@@ -26,6 +43,7 @@
   <input id="neghostation-date" type="date" name="neghostiation_date" max="04-05-2017">
 
   <br><br>
+
   <label for ="services">Which services were carried out?</label>
   <br>
 
@@ -35,21 +53,27 @@
   <% end %>
   <br>
 
-  <label for="report">Please write a report of what took place when you carried out the investigation</label>
-  <br>
-  <textarea name="report" rows="5" cols="30" placeholder="Your investigation report...">
+    <label for="report">Please write a report of what took place when you carried out the investigation</label>
+    <br>
+    <textarea name="report" rows="5" cols="60" placeholder="Your investigation report...">
 
-</textarea>
+    </textarea>
 <br>
+
+
+  <br>
 
   <label for="successful">Would you consider this a successful visit (i.e. was the ghost calmed?)</label>
   <br>
   <input id="successful" type="radio" name="successful" value = "true" />Yes</br>
   <input id="successful" type="radio" name="successful" value = "false" />No <br>
+  <br>
   <input type="submit" value = "file report" />
   <br>
 
 </form>
+</div>
+</div>
 <p>&nbsp;
 &nbsp;
 &nbsp;

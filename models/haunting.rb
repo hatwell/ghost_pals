@@ -30,7 +30,8 @@ class Haunting
   end
 
   def delete()
-    sql = "DELETE * FROM hauntings WHERE id = #{@id}"
+    sql = "DELETE FROM hauntings WHERE id = #{@id}"
+    SqlRunner.run(sql)
   end
 
   def location_type()

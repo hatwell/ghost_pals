@@ -25,6 +25,7 @@ get '/hauntings/new' do
 end
 
 get '/hauntings/:id' do
+  @customers = Customer.all
   @haunting = Haunting.find(params['id'])
   erb(:"hauntings/haunting_details")
 end
@@ -40,4 +41,12 @@ post('/hauntings') do
   location.save
   ghost.save
   erb(:"hauntings/submission")
+end
+
+post '/hauntings/:id/delete' do
+    @customers = Customer.all
+    @haunting = Haunting.find(params['id'])
+    @haunting.delete()
+    erb(:"customers/index")
+
 end
