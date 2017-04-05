@@ -91,18 +91,6 @@ footer {
   height: auto;
 }
 
-#new_customer {
-  background-color: rgb(88, 86, 87);
-}
-
-#existing_customer {
-  background-color: rgb(126, 126, 126);
-}
-
-#investigator {
-  background-color: rgb(204, 204, 204);
-}
-
 #home_page_body_wrapper {
   display: block;
   align-items:center;
@@ -135,10 +123,12 @@ footer {
   box-shadow: 1px 1px 1px #888888;
 }
 
+                      /**********************************/
+
 
 /* Front Page Styles */
 #ghost-image {
-  height:150px;
+  height:100px;
   width:auto;
   margin-left: auto;
 	margin-right: auto;
@@ -171,5 +161,32 @@ footer {
 }
 
 .placeholder {
-  height: 100px;
+  height: 50px;
+}
+
+                                /**********************************/
+
+/*New customer page styles */
+
+#new-customer-title {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Cardo;
+}
+
+.new-customer-form {
+  display: inline-block;
+}
+
+                                /**********************************/
+
+/*New haunting page styles */
+
+.haunting-input {
+  text-align: left;
+}
+
+.haunting-text-input {
+  text-align: justify;
 }

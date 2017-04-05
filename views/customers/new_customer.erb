@@ -1,16 +1,39 @@
-<p>
+<br><br>
 
-Before reporting your first haunting, please submit your name and email address, so you can check back on the status of your investigations.</p>
+<div class="container">
+<div class="row" id="new-customer-title">
+  <h4>
+Before reporting your first haunting, please submit your name and email address, so you can check back on the status of your investigations.
+</h4>
+</div>
+<div class="placeholder">
 
-<form method="post" action="/customers">
-<center>
-<label for="customer-name">Name:</label>
-<input id="customer-name" type="text" name="name"/>
-<br/>
-<label for="email-address">Email Address:</label>
-<input id="email-address" type="text" name="email_address" />
-<br />
- <input type="submit" value="Submit Details"/>
+</div>
+<div class="row">
 
- </center>
-</form>
+  <form method="post" action="/customers">
+
+    <div class="col-md-3">
+      <label for="customer-name">Name:</label>
+      <input class="new-customer-form" id="customer-name" type="text" name="name"/>
+      <br/>
+
+    </div>
+
+    <div class="col-md-7">
+      <label for="email-address">Email Address:</label>
+      <input class="new-customer-form" id="email-address" type="text" size="60" name="email_address" />
+      <br />
+
+    </div>
+    <div class="col-md-2">
+
+
+     <input type="submit" value="Submit Details"/>
+</div>
+
+  </form>
+
+</div>
+
+</div>

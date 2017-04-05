@@ -1,19 +1,29 @@
-<form method = 'post' action='/hauntings' >
-  <center>
-  <label for="haunting-name">Please give your haunting report a unique name based on its name </label>
-  <input id="haunting-name" type="text" name="haunting_name"/>
-  <br/>
-
-  <label for ="haunting-date">Please select the date the incident occurred:</label>
-  <input id="haunting-date" type="date" name="haunting_date" max="2017-05-04">
-
+<div class="container" id="haunting-report-form">
 <br>
 
-  <label for ="location-name">Where did the incident take place?</label>
-  <input id ="location-name" type="text" name="location_name" />
+<form method = 'post' action='/hauntings' >
+  <center>
+    <div class="row">
+      <div class="col-md-6 haunting-input">
+  <label for="haunting-name">Please give your haunting report a unique name</label>
+  <input id="haunting-name" type="text" name="haunting_name"/>
+</div>
 
-  <br>
+<div class="col-md-6 haunting-input">
+<label for ="haunting-date">Please select the date the incident occurred:</label>
+<input id="haunting-date" type="date" name="haunting_date" max="2017-05-04">
+</div>
+</div>
+<div class="placeholder">
 
+</div>
+<div class="row">
+  <div class="col-md-6 haunting-input">
+    <label for ="location-name">Where did the incident take place?</label>
+    <input id ="location-name" type="text" name="location_name" size="30" /></div>
+
+
+<div class="col-md-6 haunting-input">
   <label for="location-type-select">What type of location was this </label>
   <select id="location-type-select" name="location_type_id">
   <option value="" disabled selected hidden>Please Choose...</option>
@@ -23,12 +33,20 @@
        </option>
     <% end %>
   </select>
-<br>
+</div>
+</div>
 
-<label for ="ghost-name">Please name the ghost you saw</label>
-<input id ="ghost-name" type="text" name="ghost_name" />
+<div class="placeholder">
 
-<br>
+</div>
+
+<div class="row">
+  <div class="col-md-6 haunting-input">
+    <label for ="ghost-name">Please name the ghost you saw</label>
+    <input id ="ghost-name" type="text" name="ghost_name" size="30"/>
+</div>
+
+<div class="col-md-6 haunting-input">
   <label for="ghost-type-select">Please estimate what type of ghost you saw</label>
 
   <select id="ghost-type-select" name="ghost_type_id">
@@ -41,12 +59,25 @@
     <% end %>
 
   </select>
+</div>
+</div>
+<br>
   <br>
 
   <label for="haunting-description">Please describe the ghost and your experience:</label>
-  <textarea id="haunting-description" name="report" rows="5" cols="30" placeholder="Describe your haunting">
+  <br>
+  <br>
+  <div class="row">
+
+  <div class="col-md-7">
+
+
+  <textarea id="haunting-description" name="report" rows="5" cols="60" placeholder="Describe your haunting">
 
 </textarea>
+  </div>
+</div>
+<br>
 <br>
 
   <label for="customer-email-select">Please select your email address </label>
@@ -56,8 +87,12 @@
         <%= customer.email_address %>
        </option>
     <% end %>
-  <br />
 
+</select>
+<br><br>
 
    <input type="submit" value="Submit Details"/>
 </form>
+
+
+</div>
