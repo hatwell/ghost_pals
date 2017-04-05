@@ -7,6 +7,10 @@ get '/customers' do
   erb ( :"customers/index" )
 end
 
+get '/customers/dashboard' do
+  erb( :"customers/dashboard")
+end
+
 get '/customers/new' do
   erb( :"customers/new_customer" )
 end

@@ -38,6 +38,22 @@ class Ghost
     return result.first.location_name
   end
 
+  def ghost_type()
+    sql = "SELECT * FROM ghost_types WHERE id = #{@ghost_type_id}"
+    result = SqlRunner.run(sql)
+    return result.first['name']
+  end
+
+  def self.ghost_types
+    @ghosts = Ghost.all()
+    type_counter = Hash.new()
+    @ghosts.each do |ghost|
+      type = ghost.ghost_type
+      type_counter.has_key?(type) ? type_counter[type] += 1 : type_counter[type] = 1
+    end
+    return type_counter
+  end
+
   def self.all()
     sql = "SELECT * FROM ghosts"
     Ghost.map_items(sql)

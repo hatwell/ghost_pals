@@ -50,6 +50,12 @@ class Haunting
     result = Neghostiation.map_items(sql)
   end
 
+  def neghostiation_id()
+    neghostiation = self.neghostiation()
+    return "" if neghostiation == nil
+    return ""
+  end
+
   def customer ()
     sql = "SELECT * FROM customers WHERE id = #{@customer_id}"
     result = Customer.map_items(sql).first
@@ -75,6 +81,10 @@ class Haunting
   def self.delete_all
     sql = "DELETE FROM hauntings"
     SqlRunner.run(sql)
+  end
+
+  def self.how_many_hauntings
+    return self.all().size
   end
 
 

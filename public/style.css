@@ -42,7 +42,16 @@ body {
 }
 
 label {
-  padding: 10px;
+  margin:5px;
+  padding: 5px;
+}
+
+select {
+  margin:5px;
+}
+
+input {
+  margin:5px;
 }
 
 td {
@@ -186,6 +195,17 @@ footer {
 .links-row {
   width: 45%;
   margin:5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.links-two {
+  display: flex;
+  flex-direction: row;
+}
+
+.front-page-link {
+  width: 45%;
 }
 
 #ghost-panel {

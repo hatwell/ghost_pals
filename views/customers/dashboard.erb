@@ -1,19 +1,23 @@
 
 <a href="/hauntings/new">Report a new haunting</a>
+<br>
+  <hr><hr>
+  <br>
 
 <table>
 
   <tr class="table_header">
-    <td>Haunting</td>
-    <td>Date</td>
-    <td>Location</td>
-    <td>Location Type</td>
-    <td>Ghost Name</td>
-    <td>Ghost Type</td>
-    <td>Description</td>
-    <td>More Details</td>
-    <td>Link to Investigation</td>
+    <th>Haunting</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Location Type</th>
+    <th>Ghost Name</th>
+    <th>Ghost Type</th>
+    <th>Description</th>
+    <th>More Details</th>
+    <th>Link to Investigation</th>
   </tr >
+
     <% for haunting in @customer.hauntings %>
   <tr>
     <td><%=haunting.haunting_name %></td>

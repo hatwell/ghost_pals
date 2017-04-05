@@ -5,18 +5,28 @@
 
 <a href="/neghostiations/new">File a new report</a></p>
 <br>
-<div class="table_header">
 
-<h3>Investigation Reports</h3>  </div>
+
+<center>
+
+  <h2>Investigation Reports</h2>
+</center>
+<br><br>
+
+
 <table>
-
+  <tr>
+    <th>Date</th>
+    <th>Location of Haunting</th>
+    <th>Investigation Successful?</th>
+    <th>More Information</th>
+  </tr>
   <% for neghostiation in @neghostiations %>
   <tr>
     <td><%=neghostiation.neghostiation_date %></td>
 
     <td><%=neghostiation.location %></td>
     <td><%=neghostiation.successful %></td>
-    <td><%=neghostiation.id %></td>
     <td>
       <a href='/neghostiations/<%= neghostiation.id %>'>More Info</a>
     </td>

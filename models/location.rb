@@ -37,7 +37,6 @@ class Location
   def self.map_items(sql)
     locations = SqlRunner.run(sql)
     result = locations.map {|location| Location.new(location)}
-    puts result
     return result
   end
 
