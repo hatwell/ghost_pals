@@ -5,6 +5,18 @@
     <h3>Paranormal Investigators</h3>
   </div>
 
+  <div class="row">
+    <center>
+
+        <% for service in @services %>
+        || <%=service.name %> ||
+        <% end %>
+
+      </center>
+
+
+    </div>
+
     <!-- row with ghost picture and buttons-->
 
     <div class="row">
@@ -45,14 +57,15 @@
     </div>
       </div>
     <!-- ghost stats row -->
-
-    <div id="ghost-types-row" class="row">
       <center>
+        <div class="col-sm-1">
+
+        </div>
+    <div id="ghost-types-row" class="row">
 
 
-      &nbsp;
-      <% for key in @ghost_types.keys %>
-      <div class="ghost-type col-sm-<%=12/ (@length+1) %>">
+      <% for key in @ghost_types.keys[0..-2] %>
+      <div class="ghost-type col-sm-<%=12/ (@length) %>">
 
 
       <%=key.capitalize%>s <br> reported
@@ -60,30 +73,9 @@
       <%= @ghost_types[key] %>
             </div>
       <% end %>
-            </center>
-    </div>
-
-    <!-- services offered -->
-
-    <div class="row">
-      <div class="col-md-3">
-        Services offered
-      </div>
-      <div class="col-md-7">
-        <div class="row">
-          <% for service in @services %>
-            <div class="col-md-2">
-          <%=service.name %>
-          </div>
-          <% end %>
-
-        </div>
-      </div>
-      <div class="col-md-2">
-        <button type="button" name="button"><a href="mailto:caroline.hatwell@gmail.com">Contact</a></button>
-      </div>
 
     </div>
-
+          </center>
+<div class="placeholder">
 
 </div>
