@@ -239,9 +239,11 @@ footer {
 /* Haunting Report Page Styles */
 
 #haunting-report {
+  font-size: 1.3em;
   text-align: justify;
   background-image: url('/img/ep_naturalwhite.png ');
   margin-top: 1%;
+  margin-bottom: 150px;
 }
 
 .haunting-report-element {
@@ -261,4 +263,14 @@ footer {
   text-align: center;
   margin:auto;
   padding-top: 50px;
+}
+
+
+/**********************************/
+
+
+/* Customer Email page */
+
+#customer-emails{
+  margin-bottom: 150px;
 }

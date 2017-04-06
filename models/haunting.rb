@@ -19,7 +19,7 @@ class Haunting
 
   def save()
     sql = "INSERT INTO hauntings(
-    haunting_name, haunting_date, haunting_description, ghost_name, ghost_type_id, location_name, location_type_id, customer_id) VALUES ('#{@haunting_name}', '#{@haunting_date}', '#{@haunting_description}', '#{@ghost_name}', #{@ghost_type_id}, '#{@location_name}', #{@location_type_id},  #{@customer_id} ) RETURNING *"
+    haunting_name, haunting_date, haunting_description, ghost_name, ghost_type_id, location_name, location_type_id, customer_id) VALUES ('#{@haunting_name.gsub("'", "''") }', '#{@haunting_date}', '#{@haunting_description.gsub("'", "''")}', '#{@ghost_name}', #{@ghost_type_id}, '#{@location_name.gsub("'", "''") }', #{@location_type_id},  #{@customer_id} ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end

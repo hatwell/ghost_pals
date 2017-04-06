@@ -6,6 +6,10 @@
 
 <br>
 
+<div id="customer-emails">
+
+
+
       <% for customer in @customers %>
       <div class="row">
             <div class="col-md-2">
@@ -17,7 +21,7 @@
 
       <div class="customer-email">
 
-       <p><a href="/customers/<%=customer.id%>"><%=customer.email_address%></a> </p>
+       <p>&nbsp;<a href="/customers/<%=customer.id%>"><%=customer.email_address%></a> </p>
 
        </div>
       <br>
@@ -25,3 +29,5 @@
        </div>
        </div>
       <% end %>
+
+      </div>
