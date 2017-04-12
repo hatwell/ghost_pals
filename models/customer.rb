@@ -39,9 +39,6 @@ class Customer
     Haunting.map_items(sql)
   end
 
-  def neghostiations()
-
-  end
 
   def self.all()
     sql = "SELECT * FROM customers"
