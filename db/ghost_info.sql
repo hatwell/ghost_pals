@@ -1,3 +1,5 @@
+
+
 DROP TABLE neghostiations;
 DROP TABLE hauntings;
 DROP TABLE ghosts;

@@ -7,7 +7,7 @@ require_relative('controllers/neghostiations_controller')
 require_relative('models/ghost')
 require_relative('models/service')
 require ('./config/environments')
-require ('sinatra/activerecord')
+
 
 
 get '/' do
