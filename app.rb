@@ -24,6 +24,5 @@ end
 
 
 not_found do
-  @services = Service.all
   erb(:error)
 end
