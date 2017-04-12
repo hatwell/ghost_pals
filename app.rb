@@ -6,6 +6,7 @@ require_relative('controllers/hauntings_controller')
 require_relative('controllers/neghostiations_controller')
 require_relative('models/ghost')
 require_relative('models/service')
+require ('./config/environments')
 
 get '/' do
   @services = Service.all
@@ -16,7 +17,6 @@ get '/' do
 end
 
 get '/ghosts/all' do
-  @services = Service.all
   @ghosts = Ghost.all
   # binding.pry
   erb(:all_ghosts)
