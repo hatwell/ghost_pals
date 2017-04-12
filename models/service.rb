@@ -24,6 +24,7 @@ class Service
 
   def delete()
     sql = "DELETE * FROM services WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
 
@@ -42,10 +43,5 @@ class Service
     sql = "DELETE FROM services"
     SqlRunner.run(sql)
   end
-
-
-
-
-
 
 end
