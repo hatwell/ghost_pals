@@ -13,7 +13,7 @@ class Neghostiation
     @haunting_id = params['haunting_id'].to_i
     @services_id = params['services_id'].to_i
     @report = params['report']
-      if params['successful'] == "true"
+      if params['successful'] == true
         @successful = "Yes"
       else
         @successful = "No"

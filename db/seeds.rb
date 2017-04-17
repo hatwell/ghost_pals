@@ -126,6 +126,15 @@ neghostiation1 = Neghostiation.new({
   'successful' => false
   })
 
+  neghostiation1 = Neghostiation.new({
+    'neghostiation_date' => '10/04/2016',
+    'investigator_id' => investigator1.id,
+    'haunting_id' => haunting1.id,
+    'services_id' => Service.all.sample.id,
+    'report' => 'I am testing',
+    'successful' => true
+    })
+
   neghostiation1.save()
 
 
