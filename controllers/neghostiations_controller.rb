@@ -26,6 +26,7 @@ post '/new_neghostiation' do
   @services = Service.all
   neghostiation = Neghostiation.new(params)
   neghostiation.save()
+  puts params
   redirect '/investigators/confirmation'
 
 end
@@ -44,6 +45,7 @@ post '/hauntings/save' do
   Haunting.new(params).save
   Ghost.new(params).save
 end
+
 post 'neghostiations/edit' do
   neghostiation = Neghostation.new(params)
   neghostiation.update()
