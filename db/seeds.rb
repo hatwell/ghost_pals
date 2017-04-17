@@ -126,7 +126,7 @@ neghostiation1 = Neghostiation.new({
   'successful' => false
   })
 
-  neghostiation1 = Neghostiation.new({
+  neghostiation2 = Neghostiation.new({
     'neghostiation_date' => '10/04/2016',
     'investigator_id' => investigator1.id,
     'haunting_id' => haunting1.id,
@@ -136,7 +136,7 @@ neghostiation1 = Neghostiation.new({
     })
 
   neghostiation1.save()
-
+  neghostiation2.save()
 
 binding.pry
 nil
